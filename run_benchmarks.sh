@@ -1,6 +1,6 @@
 #!/bin/bash
 
-RUNS_PER_BENCHMARK=1 # CHANGE TO 30 LATER ----------------------------------------------------<<<
+RUNS_PER_BENCHMARK=30 # CHANGE TO 30 LATER ----------------------------------------------------<<<
 
 # Define directories for benchmarks
 BENCHMARKS_CUDA_DIR="benchmarks/cuda"
@@ -119,8 +119,8 @@ echo "" >> "$LOGS_FILE"
 
 # ------------------ Dot Product Benchmark ------------------
 TITLE="Dot Product (DP) benchmark"
-INPUTS="1024 2048 4096" # Test values
-# INPUTS="400000000 500000000 600000000" # CHANGE TO THIS LATER ----------------------------------------------------<<<
+# INPUTS="1024 2048 4096" # Test values
+INPUTS="300000000 400000000 500000000" # CHANGE TO THIS LATER ----------------------------------------------------<<<
 
 echo "Running Dot Product benchmarks..." >> "$LOGS_FILE"
 
@@ -141,8 +141,8 @@ run_all_haskell_benchmarks "$INPUTS" "dp-double" "dotprod-double-warmup" "dp_acc
 
 # ------------------ Julia Benchmark ------------------
 TITLE="Julia (JL) benchmark"
-INPUTS="512 1024 2048" # Test values
-# INPUTS="7168 9216 11264" # CHANGE TO THIS LATER ----------------------------------------------------<<<
+# INPUTS="512 1024 2048" # Test values
+INPUTS="10000 17000 20000" # CHANGE TO THIS LATER ----------------------------------------------------<<<
 
 echo "Running Julia benchmarks..." >> "$LOGS_FILE"
 
@@ -163,8 +163,8 @@ run_all_haskell_benchmarks "$INPUTS" "julia-warmup" "accelerate-julia-warm" "jul
 
 # ------------------ Nearest Neighbor Benchmarks ------------------
 TITLE="Nearest Neighbor (NN) benchmark"
-INPUTS="1024 2048 4096" # Test values
-# INPUTS="100000000 200000000 300000000" # CHANGE TO THIS LATER ----------------------------------------------------<<<
+# INPUTS="1024 2048 4096" # Test values
+INPUTS="800000000 900000000 1000000000" # CHANGE TO THIS LATER ----------------------------------------------------<<<
 
 echo "Running NN benchmarks..." >> "$LOGS_FILE"
 
